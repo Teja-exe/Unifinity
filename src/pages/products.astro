@@ -1,0 +1,324 @@
+---
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Product',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Products"
+    title="Elevate your education with our stunning products"
+    subtitle="Explore our comprehensive solutions designed for seamless school management. From efficient ERP systems to custom websites, uniforms and stationery, we provide everything your institution needs to thrive."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+<!-- Our Products -->
+  <Features2
+    title="Explore our diverse Products"
+    subtitle="Discover our innovative solutions to streamline and elevate school management."
+    columns={2}
+    items={[
+      {
+        title: 'ERP Application',
+        description:
+          'Smart, efficient and user-friendly school ERP for seamless management of academics, administration and communication.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Books',
+        description:
+          'We provide a wide range of textbooks, reference materials and workbooks tailored to various curricula. Our selection ensures quality, affordability and accessibility for effective learning.',
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Website',
+        description: `Custom, user-friendly school websites designed for seamless communication, easy management and a strong online presence.`,
+        icon: 'tabler:world-www',
+      },
+      {
+        title: 'Uniforms',
+        description:
+          'High-quality, comfortable and durable school uniforms tailored for a professional and cohesive look. Customizable designs with premium fabrics at affordable prices.',
+        icon: 'tabler:shirt',
+      },
+      {
+        title: 'Stationery',
+        description:
+          'Essential, high-quality stationery for students and schools, ensuring durability, affordability and seamless learning experiences.',
+        icon: 'tabler:pencil',
+      },
+      
+      
+      {
+        title: 'Consultancy',
+        description:
+          'We provide expert consultancy for schools in academics, administration, and technology to enhance efficiency and growth.',
+        icon: 'tabler:messages',
+      },
+      
+    ]}
+  />
+  <!--Our Products **** -->
+
+  <!-- About Our Uniforms --> 
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Premium Quality Fabric',
+        description:
+          'Durable, breathable and comfortable materials for all-day wear, ensuring long-lasting use.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Custom Designs and Branding',
+        description:
+          'Tailored designs with school logos, colors and patterns to enhance identity and pride.',
+        icon: 'tabler:brush',
+      },
+      {
+        title: 'Perfect Fit and Variety',
+        description:
+          'Multiple sizes and styles to suit students of all ages, promoting confidence and uniformity.',
+        icon: 'tabler:scissors',
+      },
+      {
+        title: 'Easy Maintenance',
+        description:
+          'Fade-resistant, shrink-resistant and machine-washable fabrics for hassle-free care and durability.',
+        icon: 'tabler:wash',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Our Uniforms</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Abour Our Uniforms***** -->
+
+
+  <!-- About Our Stationery -->
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'High Quality Materials',
+        description:
+          'Premium, long-lasting stationery designed for everyday student use, ensuring reliability and value',
+        icon: 'tabler:diamond',
+      },
+      {
+        title: 'Wide Range of Products',
+        description:
+          'Notebooks, pens, art supplies and more to meet all school needs, promoting creativity and organization.',
+        icon: 'tabler:shopping-bag',
+      },
+      {
+        title: 'Custom Branding',
+        description:
+          'Personalized stationery with school logos and names for a professional touch and school spirit.',
+        icon: 'tabler:tag',
+      },
+      {
+        title: 'Affordable and Accessible',
+        description:
+          'Cost-effective solutions without compromising on quality and performance, making education more convenient.',
+        icon: 'tabler:coin',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Our Stationery</h3>
+    </Fragment>
+  </Content>
+
+  <!-- About Our Stationery***** -->
+
+  
+<!-- About Our Websites -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Exclusive Design',
+        description:
+          'Tailored websites with school colors, logos and themes for a unique identity.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'User Friendly Interface',
+        description:
+          'Easy navigation for students, parents and staff to access important information effortlessly.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Integrated Communication Tools',
+        description:
+          'Features like announcements, event updates and contact forms for seamless interaction.',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: 'Secure and Responsive',
+        description:
+          'Mobile-friendly, fast-loading and secure websites ensuring smooth access on any device.',
+        icon: 'tabler:shield-lock',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Our Website</h3>
+    </Fragment>
+  </Content>
+  <!-- About  Our Websites***** -->
+
+   <!-- App Features(Features 3) -->
+
+   <Features3
+   title="App Features"
+   subtitle="A powerful ERP software for seamless school management—automating attendance, fees, timetables, communication and more. Integrated with LMS (Learing Management System), AI analytics and a mobile app for smarter operations."
+   columns={3}
+   items={[
+     {
+       title: 'Student Profile',
+       description: 'Securely stores personal, academic and health details for easy access and management.',
+       icon: 'tabler:user',
+     },
+     {
+       title: 'Attendance Tracking',
+       description: 'Instant alerts keep parents informed about their child’s daily attendance.',
+       icon: 'tabler:clipboard',
+     },
+     {
+       title: 'Time Table',
+       description: 'Day-to-day schedule of every class.',
+       icon: 'tabler:clock',
+     },
+     {
+       title: 'Report Card',
+       description: `Parents receive a digital copy of their child’s report card after every exam.`,
+       icon: 'tabler:star',
+     },
+     {
+       title: 'Fee Management',
+       description: 'Convenient fee payments through the app for a hassle-free experience.',
+       icon: 'tabler:currency-dollar',
+     },
+     {
+       title: 'Online Application',
+       description: 'Enables digital adimission process.',
+       icon: 'tabler:device-laptop',
+     },
+     {
+       title: 'Document Verification',
+       description: 'Allows easy submission and approval.',
+       icon: 'tabler:list-check',
+     },
+     {
+       title: 'Leave Request',
+       description: 'Seamless leave application for students and staff with quick approvals via the app.',
+       icon: 'tabler:beach',
+     },
+     {
+       title: 'Fee Collection and Invoices',
+       description: 'Automated fee invoices.',
+       icon: 'tabler:file-text',
+     },
+     {
+       title: 'Online Payment Integration',
+       description: `Supports UPI, card and net banking.`,
+       icon: 'tabler:credit-card',
+     },
+     {
+       title: 'Expenses & Payroll Management',
+       description: 'Tracks expenses and processes salaries to the staff.',
+       icon: 'tabler:chart-line',
+     },
+     {
+       title: 'Parent-Teacher Communication',
+       description: 'Enables direct messaging between teacher and parent.',
+       icon: 'tabler:phone',
+     },
+     {
+       title: 'Announcements & Circulars',
+       description: 'Keep parents, students and staff informed with real-time school updates.',
+       icon: 'tabler:bell',
+     },
+     {
+       title: 'Digital Diary',
+       description: 'Keep parents connected with real-time access to their child’s diary through the app.',
+       icon: 'tabler:notebook',
+     },
+     {
+       title: 'Assignments',
+       description: 'Easily create, distribute and track student assignments online.',
+       icon: 'tabler:file-text',
+     },
+     {
+       title: 'AI Performance Analytics',
+       description: `Offers insights into student progress.`,
+       icon: 'tabler:brain',
+     },
+     {
+       title: 'Staff Records',
+       description: 'Shows teacher and employee details.',
+       icon: 'tabler:edit',
+     },
+     {
+       title: 'Leave Tracking',
+       description: 'Manages staff working hours.',
+       icon: 'tabler:hourglass',
+     },
+     {
+       title: 'Product Tracking',
+       description: 'Tracks the package of uniforms and stationery.',
+       icon: 'tabler:truck',
+      },
+      {
+       title: 'ID Card Generator',
+       description: 'Quickly create professional ID cards for students and staff with ease.',
+       icon: 'tabler:address-book',
+     },
+     {
+       title: 'Complaints',
+       description: 'Parents can easily submit and track complaints through the app for quick resolution.',
+       icon: 'tabler:mail',
+     },
+   ]}
+   classes={{ container: 'max-w-5xl' }}
+ />
+
+ <!-- App Features(Features 3)****** -->
+ 
+
+  
+</Layout>
