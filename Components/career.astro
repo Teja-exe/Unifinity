@@ -1,0 +1,91 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+
+const positions = [
+  {
+    title: 'Frontend Developer',
+    description: 'We are looking for a talented frontend developer with experience in React and Tailwind CSS.',
+    link: '/apply/frontend-developer',
+  },
+  {
+    title: 'Backend Developer',
+    description: 'Seeking a backend developer proficient in Node.js and databases like PostgreSQL.',
+    link: '/apply/backend-developer',
+  },
+  {
+    title: 'UI/UX Designer',
+    description: 'Join us as a UI/UX designer to craft amazing user experiences.',
+    link: '/apply/uiux-designer',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Remote Work',
+    description: 'Work from anywhere with flexible hours.',
+  },
+  {
+    title: 'Competitive Salary',
+    description: 'We offer industry-leading salaries and benefits.',
+  },
+  {
+    title: 'Growth Opportunities',
+    description: 'Enhance your career with learning and development programs.',
+  },
+];
+
+const heroImage = {
+  src: 'https://via.placeholder.com/1200x600',
+  alt: 'Join Our Team',
+};
+---
+
+<!-- Hero Section -->
+<div class="w-full bg-blue-50 py-12">
+  <WidgetWrapper id="hero" containerClass="max-w-6xl mx-auto px-6 text-center">
+    <Headline title="Join Our Team" subtitle="Be part of an innovative company shaping the future of education and technology." />
+    <div class="mt-6">
+      <Button variant="primary" text="Apply Now" link="#positions" />
+    </div>
+    <div class="mt-8">
+      <Image class="mx-auto rounded-lg shadow-lg" {...heroImage} width={1200} height={600} />
+    </div>
+  </WidgetWrapper>
+</div>
+
+<!-- Open Positions -->
+<div id="positions" class="w-full bg-white py-12">
+  <WidgetWrapper containerClass="max-w-6xl mx-auto px-6">
+    <Headline title="Open Positions" subtitle="Find your next opportunity with us." />
+    <ItemGrid
+      items={positions}
+      columns={1}
+      classes={{
+        container: 'gap-6',
+        title: 'text-xl font-semibold',
+        description: 'text-muted',
+        action: 'text-blue-600 underline',
+      }}
+    />
+  </WidgetWrapper>
+</div>
+
+<!-- Why Join Us -->
+<div class="w-full bg-gray-100 py-12">
+  <WidgetWrapper containerClass="max-w-6xl mx-auto px-6">
+    <Headline title="Why Join Us?" subtitle="We offer a great working environment with excellent benefits." />
+    <ItemGrid
+      items={benefits}
+      columns={3}
+      classes={{
+        container: 'gap-6',
+        title: 'text-xl font-semibold',
+        description: 'text-muted',
+      }}
+    />
+  </WidgetWrapper>
+</div>

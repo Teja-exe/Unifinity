@@ -1,0 +1,65 @@
+---
+import type { Content as Props } from '~/types';
+import Headline from '../ui/Headline.astro';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
+import ItemGrid from '../ui/ItemGrid.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  content = await Astro.slots.render('content'),
+  callToAction,
+  items = [],
+  columns,
+  isReversed = false,
+  isAfterContent = false,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto text-center pb-2 overflow-hidden ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+    }}
+  />
+  <div class="mx-auto max-w-4xl w-full p-4 md:px-8">
+    <div class="text-center">
+      {content && <div class="mb-8 text-lg dark:text-slate-400 w-full max-w-full overflow-hidden" set:html={content} />}
+
+      {
+        callToAction && (
+          <div class="mt-4 mb-6 text-primary">
+            <Button variant="link" {...callToAction} />
+          </div>
+        )
+      }
+
+      <ItemGrid
+        items={items}
+        columns={columns}
+        classes={{
+          container: `gap-y-2 md:gap-y-4 w-full max-w-full`,
+          panel: 'max-w-none',
+          title: 'text-lg font-medium leading-6 dark:text-white',
+          description: 'text-muted dark:text-slate-400',
+        }}
+      />
+    </div>
+  </div>
+</WidgetWrapper>
