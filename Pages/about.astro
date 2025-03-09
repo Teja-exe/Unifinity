@@ -1,0 +1,264 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features5 from '~/components/widgets/features5.astro';
+import Hero3 from '~/components/widgets/hero3.astro'
+import Mission from '~/components/widgets/Mission.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+  
+  <Layout metadata={metadata}>
+    <!-- Hero Widget ******************* -->
+  
+    <Hero
+      tagline="About us"
+      image={{
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: 'Caos Image',
+      }}
+    >
+      <Fragment slot="title">
+        Transform Your School’s Digital Presence with Our
+        <br />
+        <span class="text-accent dark:text-white highlight"> Custom EdTech Solutions </span>
+      </Fragment>
+  
+      <Fragment slot="subtitle">
+        At Unifinity, we are dedicated to transforming the education sector with innovative solutions that empower schools to operate efficiently and effectively. Our mission is to provide a one-stop solution for educational institutions by offering ERP software, books, website, school uniforms, stationery and consultancy services all under one roof.
+      </Fragment>
+    </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Statistics about us"
+    stats={[
+      { title: 'Cities', amount: '4' },
+      { title: 'Schools', amount: '12' },
+      { title: 'Employees', amount: '248' },
+      { title: 'Awards', amount: '24' },
+    ]}
+  />
+
+  <!-- Features3 Widget (Our Products)************** -->
+
+  <Features3
+    title="Our Products"
+    subtitle="At Unifinity, we provide complete solutions to simplify school operations and enhance efficiency—all in one place!"
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'School ERP',
+        description:
+          'Designed to meet the unique needs of educational institutions, our ERP solutions enhance efficiency and empower schools to focus on what matters most.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Books',
+        description:
+          'A wide range of high-quality educational books and learning materials to support academic excellence and foster student success.',
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Websites',
+        description:
+          'Modern, responsive and feature-rich websites designed for schools. We provide user-friendly websites that enhance communication and reflect your school’s unique identity.',
+        icon: 'tabler:world-www',
+      },
+      {
+        title: 'Custom School Uniforms',
+        description:
+          'High-quality, comfortable uniforms designed to reflect your school’s ethos. Our uniforms ensure durability and pride, perfectly suited for everyday school life.',
+        icon: 'tabler:shirt',
+      },
+      {
+        title: 'Stationery',
+        description:
+          'We are providing high-quality stationery, including notebooks, pens, art supplies and more to support students in their everyday learning.',
+        icon: 'tabler:ruler',
+      },
+      
+      
+      {
+        title: 'Consultancy',
+        description:
+          'Expert guidance for schools on management, technology integration and operational efficiency.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget (Our Products)************** -->
+
+  <!-- <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'E-commerce',
+        description:
+          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Blog',
+        description:
+          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Business',
+        description:
+          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Branding',
+        description:
+          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Medical',
+        description:
+          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Fashion Design',
+        description:
+          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
+        icon: 'tabler:template',
+      },
+    ]} -->
+    <!-- image={{
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Colorful Image',
+    }}
+  /> -->
+
+  <!-- Steps2 Widget ****************** -->
+
+  <!--Who We Are -->
+
+  <Features5 id = 'who'
+    title="Who We Are"
+    subtitle="At Unifinity, we are committed to transforming the education sector by providing comprehensive solutions for schools. Our expertise spans across technology, resources and consultancy, ensuring that educational institutions run smoothly and efficiently. We understand the challenges schools face in managing day-to-day operations and we aim to bridge the gap with innovative, reliable and high-quality services. From streamlining administrative processes to enhancing student experiences, we help schools focus on what truly matters—education. With a team of professionals dedicated to excellence, Unifinity is your trusted partner in building a smarter, more efficient and future-ready educational environment."
+  />
+
+  <!--Who We Are********* -->
+
+
+  <!-- Our Vision & Mission Section -->
+  <div class="mt-2 space-y-2"> <!-- Reduced vertical space further -->
+    <Mission
+      id="mission"
+      title="Our Mission"
+      subtitle=""
+      tagline=""
+      classes={{ container: 'max-w-6xl' }}
+      items={[
+        
+        {
+          description:
+            "Our mission is to empower educational institutions with cutting-edge ERP solutions, high-quality books and essential learning resources while also providing premium school uniforms and fashion apparel. We are committed to leveraging innovation, technology and a customer-first approach to enhance efficiency, accessibility and sustainability in both education and lifestyle. By integrating smart digital tools, we aim to simplify school management, improve student learning experiences and foster seamless communication between educators, students and parents. Our curated selection of books and educational materials ensures academic excellence, while our uniforms and apparel uphold quality, comfort and style. With a strong focus on sustainability, we strive to create eco-friendly solutions that reduce waste and promote ethical practices. Through continuous improvement and a passion for excellence, we aspire to be a trusted partner in shaping the future of education and fashion.",
+        },
+      ]}
+    />
+
+    <Mission
+      id="vision"
+      title="Our Vision"
+      subtitle=""
+      tagline=""
+      classes={{ container: 'max-w-6xl' }}
+      items={[
+        {
+          description:
+            "Our vision is to revolutionize education and lifestyle by seamlessly integrating innovation, technology and sustainability. We aim to empower schools with advanced ERP solutions, provide high-quality educational resources and redefine fashion through a commitment to excellence, ethics and customer satisfaction. By harnessing smart digital solutions, we envision educational institutions operating with greater efficiency, accessibility and collaboration. Our carefully curated books and learning materials will enhance academic success, while our school uniforms and fashion apparel will set new standards for quality, comfort and style. With sustainability at our core, we are dedicated to creating eco-friendly, responsible solutions that minimize waste and promote ethical business practices. Through continuous innovation and a drive for excellence, we aspire to be a catalyst for positive change in both education and fashion.",
+        },
+      ]}
+    />
+  </div>
+
+
+
+  <!--Our Values  -->
+
+  <FAQs id="values"
+  title="Our Values"
+  subtitle=""
+  tagline=""
+  classes={{ container: 'max-w-6xl' }}
+  items={[
+    {
+      title: 'Innovation',
+      description:
+        "We embrace technology and creativity to provide cutting-edge solutions for schools. By continuously evolving and adopting the latest advancements, we ensure that educational institutions stay ahead in a rapidly changing world.",
+        icon: 'tabler:bulb'
+    },
+    {
+      title: 'Quality',
+      description:
+        'Excellence is at the heart of everything we do. From products to services, we maintain high standards to deliver reliable, durable and effective solutions that meet the unique needs of schools.',
+      icon:'tabler:star'
+      },
+    {
+      title: 'Integrity',
+      description:
+        "We uphold honesty, clarity and ethical standards in every solution we bring to schools—from ERP systems to uniforms. Our unwavering integrity ensures schools trust us as their reliable partner for growth and success.",
+      icon:'tabler:shield'
+      },
+    {
+      title: "Sustainability",
+      description:
+        "We focus on long-term, eco-friendly solutions that benefit both schools and the environment. From responsibly sourced materials to digital transformation, we strive to create a positive impact on the future of education.",
+      icon:'tabler:recycle'
+      },
+    
+  ]}
+/>
+  <!--Our Values ****** -->
+
+
+ 
+
+
+  <!--Why Choose Us -->
+
+  <Features5 id="why"
+  title="Why Choose Us?"
+  classes={{ container: 'max-w-6xl px-10 py-6 !important' }}
+  items={[
+    {
+      // title: 'Why Unifinity',
+      description:
+        "At Unifinity, we understand the challenges schools face in managing daily operations while striving for academic excellence. That’s why we provide comprehensive, technology-driven solutions designed to streamline school management and enhance the learning experience. Here’s why schools trust us:\n\n" +
+        "• One-Stop Solution – From ERP systems, website development, uniforms, stationery and books to consultancy services, we offer everything a school needs under one roof.\n\n" +
+        "• Customized & Scalable Solutions – We understand that every institution is unique. Our solutions are tailored to meet your school’s specific needs and scale as your institution grows.\n\n" +
+        "• Cutting-Edge Technology – Our advanced ERP systems and digital platforms help schools automate administrative tasks, improve communication and enhance efficiency.\n\n" +
+        "• Quality & Reliability – Whether it’s school uniforms, books or stationery, we ensure premium quality materials that meet the highest standards.\n\n" +
+        "• Expert Guidance & Support – Our experienced team provides end-to-end consultancy to help schools implement the best solutions for seamless operations and student success.\n\n" +
+        "• Cost-Effective & Time-Saving – We help schools reduce operational costs and save valuable time by integrating smart, efficient solutions that simplify management.\n\n" +
+        "Partner with us and experience a smarter, more efficient way to manage your school.\n\n" +
+        "Let’s work together to transform education and create a better future for students and educators.",
+    },
+    ]}
+/>
+
+
+
+
+
+</WidgetWrapper>

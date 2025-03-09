@@ -1,0 +1,69 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+---
+
+<Layout metadata={{ title: 'Contact' }}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText tagline="Contact" title="Let's Connect!" />
+
+  <!-- Contact Form Component ******************* -->
+  <form id="contactForm">
+    <ContactUs
+      id="form"
+      title="Drop us a message today!"
+      subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking for right there! If not, our support team is delighted to help you."
+      inputs={[
+        { type: 'text', name: 'name', label: 'Name' },
+        { type: 'email', name: 'email', label: 'Email' },
+        { type: 'tel', name: 'mobile', label: 'Mobile' },
+      ]}
+      textarea={{ name: 'message', label: 'Message' }}
+      disclaimer={{
+        label: 'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      }}
+      description="Our support team typically responds within 24 business hours."
+    />
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        console.log("DOMContentLoaded event fired!"); // Debugging log
+  
+        const form = document.getElementById("contactForm"); // Corrected ID
+        console.log("Trying to attach event listener to form:", form); // Check if form exists
+  
+        if (form) {
+            try {
+                const { handleFormSubmit } = await import('/src/scripts/formHandler.js');
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    handleFormSubmit(event); // Call your form handler
+                    alert("Form submitted successfully!"); // Display dialog box
+                    form.reset(); // Reset the form
+                });
+                console.log("✅ Event listener attached successfully!");
+            } catch (error) {
+                console.error("Error loading formHandler.js:", error);
+            }
+        } else {
+            console.error("Form with id 'contactForm' not found!");
+        }
+    });
+  </script>
+
+  <!-- Features2 Widget ************** -->
+  <Features2 id="office"
+    title="We are here to help!"
+    items={[
+      { title: 'General support', description: 'Chat with us for account issues, payment problems, or general questions.' },
+      { title: 'Contact sales', description: 'Ask us about purchases, customization options and licensing.' },
+      { title: 'Technical support', description: 'Need help with installation, editing issues, or compatibility problems?' },
+      { title: 'Phone', description: '+91 89196 50382', icon: 'tabler:headset' },
+      { title: 'Email', description: 'support@unifinity.com', icon: 'tabler:mail' },
+      { title: 'Location', description: '1234 Lorem Ipsum St, 12345, Miami, EEUU', icon: 'tabler:map-pin' },
+    ]}
+  />
+</Layout>

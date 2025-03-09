@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Careers from '~/components/widgets/careers.astro';
+import Careerscontact from '~/components/widgets/Careerscontact.astro';
+
+const metadata = {
+  title: 'Careers — Unifinity',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  
+  <Careers
+    isReversed
+    title="Join Our Team"
+    items={[
+      {
+        description:
+          "At Unifinity, we believe in innovation, collaboration and growth. Join our team and be part of a dynamic environment where your ideas matter, your skills are valued and your career flourishes. Together, we can shape the future of education with cutting-edge solutions and impactful change. Whether you're an experienced professional or just starting your journey, we offer opportunities to learn, lead and make a difference. Let's build something great together!",
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Careers>
+
+  <form id="contactForm" class="mt-10"> 
+    <Careerscontact
+      id="form"
+      title="Tell Us About Yourself!"
+      inputs={[
+        { type: 'text', name: 'name', label: 'Name *' },
+        { type: 'email', name: 'email', label: 'Email *' },
+        { type: 'tel', name: 'mobile', label: 'Mobile *' },
+        { type: 'text', name: 'degree', label: 'Degree *'},
+        { type: 'text', name: 'work_experience', label: 'Work Experience *'},
+        { type: 'file', name: 'file', label: 'CV / Resume *', accept: ".pdf" },
+      ]}
+      disclaimer={{
+        label: 'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      }}
+      description="Our support team typically responds within 24 business hours."
+    />
+  </form>
+
+  <!-- JavaScript for file validation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const fileInput = form.querySelector("input[type='file']");
+
+      form.addEventListener("submit", function (event) {
+        const file = fileInput.files[0];
+        if (file) {
+          const fileType = file.name.split(".").pop().toLowerCase();
+          if (fileType !== "pdf") {
+            alert("Only PDF files are allowed. Please upload a valid PDF file.");
+            event.preventDefault(); // Prevent form submission
+          }
+        }
+      });
+    });
+  </script>
+
+</Layout>

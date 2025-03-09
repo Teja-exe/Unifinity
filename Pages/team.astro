@@ -1,0 +1,82 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content1 from '~/components/widgets/content1.astro';
+const metadata = {
+  title: 'Our Team — Unifinity',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+<Content1
+  isReversed
+  title="Founder & CEO"
+  items={[
+    {
+      title: 'From The Founder',
+      description:
+        `I am Nalla Lokesh Sai, the Founder & CEO of Unifinity and I am delighted to share our vision with you. Having worked closely with educational institutions, I understand the challenges schools face in managing operations efficiently while focusing on delivering quality education.
+
+That’s why I started Unifinity—to provide a one-stop solution that simplifies school management through ERP systems, website development, uniforms, stationery, books and consultancy services. My mission is to empower schools with cutting-edge technology and resources, allowing educators to focus on what truly matters—nurturing the next generation of learners.
+
+At Unifinity, we are committed to delivering seamless, innovative and customized solutions to help schools operate efficiently and enhance the learning experience. Whether it's digitizing processes, improving resource management, or ensuring students have access to the best educational materials, we are here to support your institution every step of the way.
+
+I invite you to join us on this journey of transformation and excellence in education. Together, let’s build a brighter future for students and educators alike.
+
+Best regards,
+Nalla Lokesh Sai
+Founder & CEO, Unifinity`
+    },
+
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Colorful Image',
+  }}
+>
+
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content1>
+
+  <Content1
+    isAfterContent
+    title="Co-Founder"
+    items={[
+      {
+        title: 'From The Co-Founder',
+        description: `I am Pappala Sai Dinesh, the Co-Founder of Unifinity, I am honored to be a part of this journey to transform education through innovation and technology. Having worked closely with schools, I understand the challenges institutions face in managing their operations efficiently while maintaining a focus on academic excellence.
+
+At Unifinity, our goal is to provide comprehensive, technology-driven solutions that help schools streamline their processes and create a more effective learning environment. From ERP systems and website development to uniforms, stationery, books and consultancy services, we are here to support your institution every step of the way.
+
+Education is the foundation of our future and I strongly believe that with the right tools and technology, schools can enhance both their administrative efficiency and the overall learning experience. We are committed to offering seamless, scalable and customized solutions that meet the unique needs of every institution.
+
+I invite you to join us in this journey of educational transformation. Together, we can build a stronger, smarter and more efficient education system that empowers both educators and students.\n
+Best regards,
+Pappala Sai Dinesh
+Co-Founder, Unifinity`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>

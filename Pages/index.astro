@@ -1,0 +1,425 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+// import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import { getPermalink } from '~/utils/permalinks';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Unifinity — EdTech Services',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in touch',
+        href: getPermalink('/contact'),
+        target: '_blank',
+      },
+      { text: 'Learn more', href: getPermalink('/products') },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Unifinity
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Unifinity</span> is a one-stop solution for schools, providing advanced ERP software, books, custom websites, high-quality uniforms, stationery and expert consultancy. We streamline school operations, enhance learning experiences and support educational institutions with innovative, cost-effective and tailored solutions.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">EdTech Solutions.</span>
+      
+    </Fragment>
+  </Hero>
+
+  <!--Stats -->
+  <Stats
+  stats={[
+    { title: 'Schools', amount: '100+' },
+    { title: 'schools', amount: '100+' },
+    { title: 'Students', amount: '10,000+' },
+    { title: 'Users', amount: '20,000+' },
+  ]}
+/>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="Products"
+    tagline="Our Products"
+    title="What you get with Unifinity"
+    subtitle="At Unifinity, we provide complete solutions to simplify school operations and enhance efficiency—all in one place! "
+    items={[
+      {
+        title: 'ERP Application',
+        description:
+          'A school ERP app streamlines operations like attendance, fees, results, assignments and communication, enhancing efficiency, transparency and productivity.',
+        icon: 'tabler:server-cog',
+      },
+      {
+        title: 'Books',
+        description:
+          "We provide a wide range of textbooks, reference materials and workbooks tailored to various curricula. Our selection ensures quality, affordability and accessibility for effective learning.",
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Website',
+        description:
+          'We create custom, mobile-friendly school websites that reflect your school’s unique identity. Designed for seamless navigation and clear communication, our websites help you connect with parents, students and staff effortlessly while showcasing your school’s vision and achievements.',
+        icon: 'tabler:world-www',
+      },
+      {
+        title: 'Uniforms',
+        description:
+          'We offer high-quality, durable school uniforms that reflect your school’s ethos. Available in various sizes, our uniforms combine comfort, functionality and pride for students, ensuring they feel confident and ready to excel.',
+        icon: 'tabler:shirt',
+      },
+      {
+        title: 'Stationery',
+        description:
+          'We provide a premium range of high-quality stationery essentials for schools including notebooks, pens, art supplies and more. Designed to combine durability, affordability and seamless learning experiences.',
+        icon: 'tabler:pencil',
+      },
+      
+      {
+        title: 'Consultancy',
+        description:
+          'We offer expert consultancy services to schools, guiding them in academic planning, administration and technology integration. Our solutions enhance efficiency, compliance and overall institutional growth.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  
+  <!-- Content Widget **************** -->
+  <Content
+  isReversed
+  tagline="Core Benefits"
+  title="Unifinity's Benefits!"
+  items={[
+    {
+      title: 'Integrated Services',
+      description:
+        'Schools can access ERP, websites, uniforms, stationery, books and consultancy under one roof, simplifying management.',
+    },
+    {
+      title: 'Enhanced Efficiency',
+      description:
+        'Our ERP system automates attendance, fee payments, payrolls and more, reducing administrative workload.',
+    },
+    {
+      title: 'Customization',
+      description:
+        'Tailored solutions for ERP software, uniforms and stationery to match each school’s unique identity and requirements.',
+    },
+    {
+      title: 'Time Saving',
+      description:
+        'Schools can focus on education while we handles logistics, supplies and digital transformation.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Colorful Image',
+  }}
+>
+
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Cost-Effective Solutions',
+        description: `Our products and services offer exceptional value, combining affordability with top-tier quality to meet your school’s needs without stretching your budget.`,
+      },
+      {
+        title: 'Improved Communication',
+        description:
+          'ERP features like digital diaries, announcements and complaints enhance engagement between parents, teachers and students.',
+      },
+      {
+        title: 'Academic Excellence',
+        description:
+          "Quality books, structured teaching plans and expert consultancy help schools improve learning outcomes.",
+      },
+      {
+        title: 'Professional Branding',
+        description:
+          'We help schools build a distinct and impactful identity through tailored branding solutions from uniforms to websites, ensuring your school stands out with pride and professionalism.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Scalability and Growth Support',
+        description:
+          'Our solutions grow with schools, adapting to their evolving needs, whether expanding campuses or upgrading systems.',
+      },
+      {
+        title: 'Regularity Compilance',
+        description:
+          'Our consultancy ensures schools meet educational regulations, policies and best practices effortlessly.',
+      },
+      {
+        title: 'Data Driven Decision Making',
+        description:
+          'The ERP software provides insights through reports and analytics, helping schools make informed decisions.',
+      },
+      {
+        title: 'Reliable Support and Maintenace',
+        description: `Ongoing technical support and consultation ensure smooth operations with minimal disruptions.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+  
+
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Get The Most Advanced EdTech Services From Us."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Connect With Us</span>',
+        description:
+          "Reach out to us to discuss your school’s needs. Whether you require an advanced ERP, high-quality books, custom uniforms, a professional website, essential stationery or expert consultancy, we’re here to help.",
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Share Your Requirements</span>',
+        description:
+          "Tell us what your school needs—whether it’s an ERP software, books, uniforms, website, stationery or consultancy. Our team will analyze your needs and suggest the best solutions.",
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Get A Customized Plan</span>',
+        description:
+          'Based on your requirements, we’ll create a tailored package for your school, ensuring a perfect fit for your school’s goals.',
+        icon: 'tabler:receipt',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Confirm And Begin</span>',
+        description:"Once you're satisfied with the plan, we’ll start the process. From ERP setup to resource delivery, we handle everything smoothly.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Ongoing Support And Growth</span>',
+        description:"We stay with you beyond the setup, providing continuous support, updates and expert advice to ensure your school runs efficiently.",
+        icon: 'tabler:graph',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+  
+  <!-- Features 3 widget ****************** -->
+
+  
+
+  <section class="text-center py-12 bg-[#eff6ff] dark:bg-transparent">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+        Smart Solutions to Simplify and Elevate Your School!
+    </h1>    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto px-4">
+      
+        <!-- Simple & Easy to Use -->
+        <div class="flex flex-col items-center text-center">
+           <img src= "data:image/svg+xml;base64,PHN2ZyBpZD0iSG9tZS1TaW1wbGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzg4IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA4OCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiLz4KICA8ZyBpZD0iR3JvdXBfMjcxIiBkYXRhLW5hbWU9Ikdyb3VwIDI3MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi4yNSA5LjIzMikiPgogICAgPGcgaWQ9Ikdyb3VwXzI2NiIgZGF0YS1uYW1lPSJHcm91cCAyNjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuNDk0KSI%2BCiAgICAgIDxwYXRoIGlkPSJQYXRoXzE1NSIgZGF0YS1uYW1lPSJQYXRoIDE1NSIgZD0iTTkyMi43LDYyMC4zMDVhMi4wODMsMi4wODMsMCwwLDEtMi4wODMtMi4wODNWNjA3Ljc2MWEyMy4xNzcsMjMuMTc3LDAsMCwwLTI2LjA3OS0yMi45OTJjLTExLjU1LDEuNC0yMC4yNTgsMTEuNy0yMC4yNTgsMjMuOTV2OS41YTIuMDgzLDIuMDgzLDAsMCwxLTQuMTY3LDB2LTkuNWMwLTE0LjM1NiwxMC4yODMtMjYuNDMxLDIzLjkyMy0yOC4wOWEyNy4zNDYsMjcuMzQ2LDAsMCwxLDMwLjc0OCwyNy4xMzF2MTAuNDYxQTIuMDgxLDIuMDgxLDAsMCwxLDkyMi43LDYyMC4zMDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODcwLjExNyAtNTgwLjQzMikiIGZpbGw9IiNlNzRjM2MiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJHcm91cF8yNjciIGRhdGEtbmFtZT0iR3JvdXAgMjY3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDQ3LjYxMykiPgogICAgICA8cGF0aCBpZD0iUGF0aF8xNTYiIGRhdGEtbmFtZT0iUGF0aCAxNTYiIGQ9Ik04ODguOTI1LDYzNS4yM0g4NjkuMDgzQTIuMDgzLDIuMDgzLDAsMCwxLDg2Nyw2MzMuMTQ2YTI5LjksMjkuOSwwLDAsMSwyOS44Ni0yOS44NiwyLjA4MywyLjA4MywwLDAsMSwwLDQuMTY3LDI1LjczLDI1LjczLDAsMCwwLTI1LjYxLDIzLjYxaDE3LjY3NWEyLjA4MywyLjA4MywwLDAsMSwwLDQuMTY3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg2NyAtNjAzLjI4NikiIGZpbGw9IiMzNDQ5NWUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJHcm91cF8yNjgiIGRhdGEtbmFtZT0iR3JvdXAgMjY4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNS44NzMgOS45MTMpIj4KICAgICAgPHBhdGggaWQ9IlBhdGhfMTU3IiBkYXRhLW5hbWU9IlBhdGggMTU3IiBkPSJNODkyLjU3NSw2MjEuMWExNy45NTcsMTcuOTU3LDAsMSwxLDE3Ljk1Ni0xNy45NTZBMTcuOTc3LDE3Ljk3NywwLDAsMSw4OTIuNTc1LDYyMS4xWm0wLTMxLjc0OGExMy43OTEsMTMuNzkxLDAsMSwwLDEzLjc5LDEzLjc5MkExMy44MDYsMTMuODA2LDAsMCwwLDg5Mi41NzUsNTg5LjM1N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04NzQuNjE5IC01ODUuMTkpIiBmaWxsPSIjMzQ0OTVlIi8%2BCiAgICA8L2c%2BCiAgICA8ZyBpZD0iR3JvdXBfMjY5IiBkYXRhLW5hbWU9Ikdyb3VwIDI2OSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQuODAyIDI1Ljc4OCkiPgogICAgICA8cGF0aCBpZD0iUGF0aF8xNTgiIGRhdGEtbmFtZT0iUGF0aCAxNTgiIGQ9Ik04ODcuOTMyLDYwMy45MmE5LjAzOCw5LjAzOCwwLDAsMS05LjAyNy05LjAyNywyLjA4MywyLjA4MywwLDAsMSwyLjA4My0yLjA4M2gxMy44ODdhMi4wODEsMi4wODEsMCwwLDEsMi4wODMsMi4wODNBOS4wMzgsOS4wMzgsMCwwLDEsODg3LjkzMiw2MDMuOTJabS00LjM5Mi02Ljk0NGE0Ljg2MSw0Ljg2MSwwLDAsMCw4Ljc4MywwWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg3OC45MDUgLTU5Mi44MSkiIGZpbGw9IiMzNDQ5NWUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJHcm91cF8yNzAiIGRhdGEtbmFtZT0iR3JvdXAgMjcwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNy43NzcgNDcuNjEzKSI%2BCiAgICAgIDxwYXRoIGlkPSJQYXRoXzE1OSIgZGF0YS1uYW1lPSJQYXRoIDE1OSIgZD0iTTkzNC4xMzEsNjM3LjIxM0g4ODYuMzg1YTYuMDUxLDYuMDUxLDAsMSwxLDAtMTIuMWg1Ljg1NHYtMTUuOWE1LjkzMiw1LjkzMiwwLDAsMSw1LjkyNS01LjkyNWgzNS45NjdhNS45MzIsNS45MzIsMCwwLDEsNS45MjUsNS45MjVWNjMxLjI5QTUuOTMsNS45MywwLDAsMSw5MzQuMTMxLDYzNy4yMTNabS0zNS45NjctNC4xNjdoMzUuOTY3YTEuNzYxLDEuNzYxLDAsMCwwLDEuNzU4LTEuNzU2VjYwOS4yMTFhMS43NjEsMS43NjEsMCwwLDAtMS43NTgtMS43NThIODk4LjE2NGExLjc2MiwxLjc2MiwwLDAsMC0xLjc1OSwxLjc1OHYxNy45ODNhMi4wODQsMi4wODQsMCwwLDEtMi4wODMsMi4wODNoLTcuOTM3YTEuODg0LDEuODg0LDAsMSwwLDAsMy43NjlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODgwLjMzMyAtNjAzLjI4NikiIGZpbGw9IiMzNDQ5NWUiLz4KICAgIDwvZz4KICA8L2c%2BCjwvc3ZnPgo%3D", width="125px", height="125px">
+            <h3 class="text-lg font-semibold mt-4 text-gray-900 dark:text-white">
+                Effortless & User-Friendly for Educators
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                Built to connect teachers and parents seamlessly. No technical skills needed to get things done quickly.
+            </p>
+        </div>
+        
+        <!-- Powerful Features -->
+        <div class="flex flex-col items-center text-center">
+          <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iSG9tZS1Qb3dlcmZ1bCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogIDxyZWN0IGlkPSJSZWN0YW5nbGVfODkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDg5IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0ibm9uZSIvPgogIDxnIGlkPSJHcm91cF8yODgiIGRhdGEtbmFtZT0iR3JvdXAgMjg4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0LjE2NyAxNS42MjUpIj4KICAgIDxnIGlkPSJHcm91cF8yNzUiIGRhdGEtbmFtZT0iR3JvdXAgMjc1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0My43NSAyLjA4MykiPgogICAgICA8ZyBpZD0iR3JvdXBfMjczIiBkYXRhLW5hbWU9Ikdyb3VwIDI3MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA0My45MjMpIj4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNjAiIGRhdGEtbmFtZT0iUGF0aCAxNjAiIGQ9Ik05ODUuMDgzLDYxOS45OTNBMi4wODEsMi4wODEsMCwwLDEsOTgzLDYxNy45MVY2MDcuNjY2YTIuMDgzLDIuMDgzLDAsMSwxLDQuMTY3LDBWNjE3LjkxQTIuMDgyLDIuMDgyLDAsMCwxLDk4NS4wODMsNjE5Ljk5M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05ODMgLTYwNS41ODMpIiBmaWxsPSIjMzQ0OTVlIi8%2BCiAgICAgIDwvZz4KICAgICAgPGcgaWQ9Ikdyb3VwXzI3NCIgZGF0YS1uYW1lPSJHcm91cCAyNzQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4LjEpIj4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNjEiIGRhdGEtbmFtZT0iUGF0aCAxNjEiIGQ9Ik0xMDE5LjQyMSw2MzguNjgxYTIuMDgyLDIuMDgyLDAsMCwxLTIuMDgzLTIuMDgzVjU4OC42NjdoLTEyLjg2NWMtNC4yMjMsMC02LjI5LjE2OS05Ljc5LDEuODczYTIuMDgzLDIuMDgzLDAsMSwxLTEuODIzLTMuNzQ2YzQuMDU0LTEuOTc1LDYuNzQ0LTIuMjk0LDExLjYxMy0yLjI5NGgxNC45NDhhMi4wODIsMi4wODIsMCwwLDEsMi4wODMsMi4wODNWNjM2LjZBMi4wODIsMi4wODIsMCwwLDEsMTAxOS40MjEsNjM4LjY4MVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05OTEuNjg4IC01ODQuNSkiIGZpbGw9IiMzNDQ5NWUiLz4KICAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9Ikdyb3VwXzI3NyIgZGF0YS1uYW1lPSJHcm91cCAyNzciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMi4wODMpIj4KICAgICAgPGcgaWQ9Ikdyb3VwXzI3NiIgZGF0YS1uYW1lPSJHcm91cCAyNzYiPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzE2MiIgZGF0YS1uYW1lPSJQYXRoIDE2MiIgZD0iTTk2NC4wODMsNjM4LjY4MUEyLjA4MSwyLjA4MSwwLDAsMSw5NjIsNjM2LjZWNTg2LjU4M2EyLjA4MSwyLjA4MSwwLDAsMSwyLjA4My0yLjA4M2gxNC45NDhhMzAuNzE5LDMwLjcxOSwwLDAsMSwxMS41MzMsMi4yMjVjLjY4OC4yNzcsMS4yLjQ1MiwxLjYyNS42YTEwLjU4OSwxMC41ODksMCwwLDEsMy44MzksMi4xMjksMi4wODIsMi4wODIsMCwwLDEtMi41ODMsMy4yNjcsNi42NTgsNi42NTgsMCwwLDAtMi42MDgtMS40NTRjLS40ODEtLjE2Mi0xLjA1NC0uMzYzLTEuODI5LS42NzNhMjYuNTgsMjYuNTgsMCwwLDAtOS45NzctMS45MjVIOTY2LjE2N1Y2MzYuNkEyLjA4MSwyLjA4MSwwLDAsMSw5NjQuMDgzLDYzOC42ODFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTYyIC01ODQuNSkiIGZpbGw9IiMzNDQ5NWUiLz4KICAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9Ikdyb3VwXzI4MSIgZGF0YS1uYW1lPSJHcm91cCAyODEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNTApIj4KICAgICAgPGcgaWQ9Ikdyb3VwXzI3OSIgZGF0YS1uYW1lPSJHcm91cCAyNzkiPgogICAgICAgIDxnIGlkPSJHcm91cF8yNzgiIGRhdGEtbmFtZT0iR3JvdXAgMjc4Ij4KICAgICAgICAgIDxwYXRoIGlkPSJQYXRoXzE2MyIgZGF0YS1uYW1lPSJQYXRoIDE2MyIgZD0iTTEwMDcuODMzLDYyNi4yNUg5NjguMjVjLTMuNDQ2LDAtNi4yNS0zLjExNS02LjI1LTYuOTQ0di05LjcyM2EyLjA4MSwyLjA4MSwwLDAsMSwyLjA4My0yLjA4M2gyNy4zODVjNy40MjksMCwxOC40NDgsNi44NSwxOC40NDgsMTYuMzE1di4zNTJBMi4wODIsMi4wODIsMCwwLDEsMTAwNy44MzMsNjI2LjI1Wm0tNDEuNjY3LTE0LjU4M3Y3LjY0YzAsMS41MDYuOTU0LDIuNzc3LDIuMDgzLDIuNzc3aDM3LjMwOGMtMS4zLTUuODg1LTguOTQ2LTEwLjQxNy0xNC4wOS0xMC40MTdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTYyIC02MDcuNSkiIGZpbGw9IiMzNDQ5NWUiLz4KICAgICAgICA8L2c%2BCiAgICAgIDwvZz4KICAgICAgPGcgaWQ9Ikdyb3VwXzI4MCIgZGF0YS1uYW1lPSJHcm91cCAyODAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNy4yOTIpIj4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNjQiIGRhdGEtbmFtZT0iUGF0aCAxNjQiIGQ9Ik05NzQuNSw2MTUuMTY3SDk2NC4wODNhMi4wODMsMi4wODMsMCwwLDEsMC00LjE2N0g5NzQuNWEyLjA4MywyLjA4MywwLDAsMSwwLDQuMTY3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk2MiAtNjExKSIgZmlsbD0iIzM0NDk1ZSIvPgogICAgICA8L2c%2BCiAgICA8L2c%2BCiAgICA8ZyBpZD0iR3JvdXBfMjg1IiBkYXRhLW5hbWU9Ikdyb3VwIDI4NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDMuNzUgNTApIj4KICAgICAgPGcgaWQ9Ikdyb3VwXzI4MyIgZGF0YS1uYW1lPSJHcm91cCAyODMiPgogICAgICAgIDxnIGlkPSJHcm91cF8yODIiIGRhdGEtbmFtZT0iR3JvdXAgMjgyIj4KICAgICAgICAgIDxwYXRoIGlkPSJQYXRoXzE2NSIgZGF0YS1uYW1lPSJQYXRoIDE2NSIgZD0iTTEwMjQuNjY3LDYyNi4yNUg5ODUuMDgzQTIuMDgyLDIuMDgyLDAsMCwxLDk4Myw2MjQuMTY3di0uMzUyYzAtOS40NjUsMTEuMDE5LTE2LjMxNSwxOC40NDgtMTYuMzE1aDI3LjM4NWEyLjA4MiwyLjA4MiwwLDAsMSwyLjA4MywyLjA4M3Y5LjcyM0MxMDMwLjkxNyw2MjMuMTM1LDEwMjguMTEyLDYyNi4yNSwxMDI0LjY2Nyw2MjYuMjVabS0zNy4zMDgtNC4xNjdoMzcuMzA4YzEuMTI5LDAsMi4wODMtMS4yNzEsMi4wODMtMi43Nzd2LTcuNjRoLTI1LjNDOTk2LjMsNjExLjY2Nyw5ODguNjU4LDYxNi4yLDk4Ny4zNTgsNjIyLjA4M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05ODMgLTYwNy41KSIgZmlsbD0iIzM0NDk1ZSIvPgogICAgICAgIDwvZz4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iR3JvdXBfMjg0IiBkYXRhLW5hbWU9Ikdyb3VwIDI4NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzMuMzMzIDcuMjkyKSI%2BCiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTY2IiBkYXRhLW5hbWU9IlBhdGggMTY2IiBkPSJNMTAxMS41LDYxNS4xNjdoLTEwLjQxN2EyLjA4MywyLjA4MywwLDAsMSwwLTQuMTY3SDEwMTEuNWEyLjA4MywyLjA4MywwLDAsMSwwLDQuMTY3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk5OSAtNjExKSIgZmlsbD0iIzM0NDk1ZSIvPgogICAgICA8L2c%2BCiAgICA8L2c%2BCiAgICA8ZyBpZD0iR3JvdXBfMjg3IiBkYXRhLW5hbWU9Ikdyb3VwIDI4NyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIuODIxKSI%2BCiAgICAgIDxnIGlkPSJHcm91cF8yODYiIGRhdGEtbmFtZT0iR3JvdXAgMjg2Ij4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNjciIGRhdGEtbmFtZT0iUGF0aCAxNjciIGQ9Ik05ODkuOSw2MjUuNTY5YTIuMDgxLDIuMDgxLDAsMCwxLTIuMDgzLTIuMDgzVjYxMS44MTloLTcuOTgxYTIuMDgyLDIuMDgyLDAsMCwxLTEuOTkyLTIuNjkybDcuMzgxLTI0LjE1MmEyLjA4LDIuMDgsMCwwLDEsMS45OTItMS40NzVoMTYuNzczYTIuMDg0LDIuMDg0LDAsMCwxLDEuOTkyLDIuNjkybC0zLjkzNiwxMi44ODFoNy45ODFhMi4wODMsMi4wODMsMCwwLDEsMS41NDgsMy40NzlMOTkxLjQ1LDYyNC44ODFBMi4wODgsMi4wODgsMCwwLDEsOTg5LjksNjI1LjU2OVptLTcuMjUtMTcuOTE3aDcuMjVhMi4wODEsMi4wODEsMCwwLDEsMi4wODMsMi4wODN2OC4zMjdsMTMuMzYtMTQuODIzaC02LjExNWEyLjA4NiwyLjA4NiwwLDAsMS0xLjk5Mi0yLjY5MmwzLjkzNS0xMi44ODFIOTg4Ljc2WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk3Ny43NTQgLTU4My41KSIgZmlsbD0iI2U3NGMzYyIvPgogICAgICA8L2c%2BCiAgICA8L2c%2BCiAgPC9nPgo8L3N2Zz4K", width="125px", height="125px">
+            <h3 class="text-lg font-semibold mt-4 text-gray-900 dark:text-white">
+                Advanced Tools for Your School
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                Get everything you need to efficiently manage your school—ready to use from day one.
+            </p>
+        </div>
+        
+        <!-- Online & On-site Support -->
+        <div class="flex flex-col items-center text-center">
+           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOTYiIGhlaWdodD0iODIiIHZpZXdCb3g9IjAgMCA5NiA4MiI%2BDQogIDxkZWZzPg0KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4NCiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMTA3MiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMTA3MiIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjgyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC40NjUpIiBmaWxsPSJub25lIi8%2BDQogICAgPC9jbGlwUGF0aD4NCiAgPC9kZWZzPg0KICA8ZyBpZD0iR3JvdXBfMjU4NSIgZGF0YS1uYW1lPSJHcm91cCAyNTg1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjYxMSkiPg0KICAgIDxnIGlkPSJHcm91cF8yNTg0IiBkYXRhLW5hbWU9Ikdyb3VwIDI1ODQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjE0NikiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgpIj4NCiAgICAgIDxwYXRoIGlkPSJQYXRoXzM4MzkiIGRhdGEtbmFtZT0iUGF0aCAzODM5IiBkPSJNOTMuNTU1LDY3LjA5MUg4Ny45NjRWMjAuNUExLjg2NCwxLjg2NCwwLDAsMCw4Ni4xLDE4LjYzNkg3MS4yODdhMjQuMjMzLDI0LjIzMywwLDAsMC00Ny4xNTYsMEg5LjMxOEExLjg2NCwxLjg2NCwwLDAsMCw3LjQ1NSwyMC41VjY3LjA5MUgxLjg2NEExLjg2NCwxLjg2NCwwLDAsMCwwLDY4Ljk1NSwxMy4wNiwxMy4wNiwwLDAsMCwxMy4wNDUsODJIMzkuMzIzYTEuODY0LDEuODY0LDAsMSwwLDAtMy43MjdIMTMuMDQ1YTkuMzM1LDkuMzM1LDAsMCwxLTkuMTMxLTcuNDU1SDM1Ljc1NUwzOC45MzcsNzRhMS44NjQsMS44NjQsMCwwLDAsMS4zMTguNTQ2SDU1LjE2NEExLjg2NCwxLjg2NCwwLDAsMCw1Ni40ODEsNzRsMy4xODEtMy4xODNIOTEuNWE5LjMzNSw5LjMzNSwwLDAsMS05LjEzMSw3LjQ1Nkg1Ni4xQTEuODY0LDEuODY0LDAsMSwwLDU2LjEsODJIODIuMzczQTEzLjA2LDEzLjA2LDAsMCwwLDk1LjQxOCw2OC45NTVhMS44NjQsMS44NjQsMCwwLDAtMS44NjQtMS44NjRNNzAuMDczLDQ4LjQ1NUg2NC40ODJWMzMuNTQ1aDUuNTkxYTEuODY2LDEuODY2LDAsMCwxLDEuODY0LDEuODY0VjQ2LjU5MWExLjg2NiwxLjg2NiwwLDAsMS0xLjg2NCwxLjg2NE00Ny43MDksMy43MjdBMjAuNDIsMjAuNDIsMCwwLDEsNjcuNDM1LDE4LjYzNkgyNy45ODNBMjAuNDIsMjAuNDIsMCwwLDEsNDcuNzA5LDMuNzI3TTI1LjM0NSwzMy41NDVoNS41OTFWNDguNDU1SDI1LjM0NWExLjg2NiwxLjg2NiwwLDAsMS0xLjg2NC0xLjg2NFYzNS40MDlhMS44NjYsMS44NjYsMCwwLDEsMS44NjQtMS44NjRNNTguODkxLDY3LjA5MWExLjg2NCwxLjg2NCwwLDAsMC0xLjMxOC41NDZsLTMuMTgxLDMuMTgxSDQxLjAyNmwtMy4xODEtMy4xODFhMS44NjQsMS44NjQsMCwwLDAtMS4zMTgtLjU0NkgxMS4xODJWMjIuMzYySDIzLjU1NmMtLjA0Ny42MjItLjA3NCwxLjI0NC0uMDc0LDEuODY2djUuOTExYTUuNiw1LjYsMCwwLDAtMy43MjcsNS4yN1Y0Ni41OTFhNS42LDUuNiwwLDAsMCw1LjU5MSw1LjU5MUgzMi44YTEuODY0LDEuODY0LDAsMCwwLDEuODY0LTEuODY0VjMxLjY4MkExLjg2NCwxLjg2NCwwLDAsMCwzMi44LDI5LjgxOEgyNy4yMDlWMjQuMjI3YzAtLjYyMi4wMzEtMS4yNDUuMDg2LTEuODY0SDY4LjEyM2MuMDU2LjYxOS4wODYsMS4yNDIuMDg2LDEuODY0djUuNTkxSDYyLjYxOGExLjg2NCwxLjg2NCwwLDAsMC0xLjg2NCwxLjg2NFY1MC4zMThhMS44NjQsMS44NjQsMCwwLDAsMS44NjQsMS44NjRoNS41OTF2MS44NjRhMS44NjYsMS44NjYsMCwwLDEtMS44NjQsMS44NjRINTYuNzA3YTUuNiw1LjYsMCwwLDAtNS4yNy0zLjcyN0g0My45ODJhNS41OTEsNS41OTEsMCwwLDAsMCwxMS4xODJoNy40NTVhNS42LDUuNiwwLDAsMCw1LjI3LTMuNzI3aDkuNjM5YTUuNiw1LjYsMCwwLDAsNS41OTEtNS41OTFWNTEuODYxYTUuNiw1LjYsMCwwLDAsMy43MjctNS4yN1YzNS40MDlhNS42LDUuNiwwLDAsMC0zLjcyNy01LjI3VjI0LjIyN2MwLS42MjEtLjAyNy0xLjI0NC0uMDc0LTEuODY0SDg0LjIzNlY2Ny4wOTFaTTUzLjMsNTcuNzczYTEuODY2LDEuODY2LDAsMCwxLTEuODY0LDEuODY0SDQzLjk4MmExLjg2NCwxLjg2NCwwLDEsMSwwLTMuNzI3aDcuNDU1QTEuODY2LDEuODY2LDAsMCwxLDUzLjMsNTcuNzczIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjExNikiIGZpbGw9IiMxNzJiNGQiLz4NCiAgICAgIDxwYXRoIGlkPSJQYXRoXzM4NDAiIGRhdGEtbmFtZT0iUGF0aCAzODQwIiBkPSJNMjQ3Ljg2NCw0MjBBMS44NjQsMS44NjQsMCwxLDEsMjQ2LDQyMS44NjQsMS44NjQsMS44NjQsMCwwLDEsMjQ3Ljg2NCw0MjAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDAuMDM5IC0zNDEuNzI3KSIgZmlsbD0iI2U4NGMzZCIvPg0KICAgIDwvZz4NCiAgPC9nPg0KPC9zdmc%2BDQo%3D", width="125px", height="125px"> 
+        
+            <h3 class="text-lg font-semibold mt-4 text-gray-900 dark:text-white">
+                Reliable Online & On-Site Support
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
+                In addition to on-site and online assistance, we provide on-demand training and webinar sessions for seamless onboarding.
+            </p>
+        </div>
+    </div>
+</section>
+
+  <!-- Features2 Widget ************** -->
+
+<!-- FEATURES
+
+  <Features2
+    title="ERP Features"
+    subtitle="We provide the most advanced and highly responsive features."
+    tagline="ERP"
+    items={[
+      {
+        title: 'Headers',
+        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Heros',
+        description:
+          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Content',
+        description:
+          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+      FEATURES  -->
+
+
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that Unifinity offers and how it can elevate your EdTech Journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why Unifinity',
+        description:
+          "We provide comprehensive, high-quality and customized solutions to streamline school operations and enhance learning experiences. Our offerings include ERP software, books, websites, uniforms, stationery and consultancy, all designed for efficiency, affordability and reliability.",
+      },
+      {
+        title: 'What services do you provide to school?',
+        description:
+          'We provide ERP software, books, websites, uniforms, stationery and consultancy services to streamline school operations and enhance education quality. Our goal is to simplify school management and improve learning experiences.',
+      },
+      {
+        title: 'How does your ERP benefits schools?',
+        description:
+          "Our ERP system simplifies student management, attendance tracking, fee collection, timetable scheduling, report card generation and much more, making school administration seamless. It reduces manual work, saves time and enhances efficiency.",
+      },
+      {
+        title: "Can parents use your system to track their child's progress?",
+        description:
+          "Yes, parents can access attendance, report cards, assignments and announcements through our user-friendly app. It ensures transparency and keeps parents actively involved.",
+      },
+      {
+        title: 'How can a school get started with your services?',
+        description:
+          "Schools can contact us through our website, email or phone for a consultation and we will guide them through the onboarding process.",  
+        },
+      {
+        title: 'Do you offer a demo of the ERP system before purchase?',
+        description:
+          "Yes, we provide a free demo to help schools understand the features and benefits of our ERP system.",
+      },
+    ]}
+  />
+
+
+
+</Layout>
